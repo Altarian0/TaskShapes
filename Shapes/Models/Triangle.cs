@@ -1,4 +1,6 @@
-﻿namespace Shapes.Models;
+﻿using Shapes.Exceptions;
+
+namespace Shapes.Models;
 
 /// <summary>
 /// Класс треугольника
@@ -43,6 +45,9 @@ public class Triangle : Shape
     private void ValidateTriangle()
     {
         if (SideA + SideB <= SideC || SideA + SideC <= SideB || SideB + SideC <= SideA)
-            throw new Exception("Это не треугольник!");
+            throw new ShapeException("Это не треугольник!");
+
+        if (SideA <= 0 || SideB <= 0 || SideC <= 0)
+            throw new ShapeException("Стороны треугольника не могут быть 0");
     }
 }

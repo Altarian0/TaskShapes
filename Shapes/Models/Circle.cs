@@ -1,4 +1,6 @@
-﻿namespace Shapes.Models;
+﻿using Shapes.Exceptions;
+
+namespace Shapes.Models;
 
 /// <summary>
 /// Класс круга
@@ -26,6 +28,6 @@ public class Circle : Shape
     private void ValidateCircle()
     {
         if (Radius <= 0)
-            throw new Exception("Радиус не может быть 0");
+            throw new ShapeException("Радиус не может быть 0");
     }
 }

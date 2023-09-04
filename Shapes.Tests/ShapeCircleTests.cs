@@ -1,4 +1,5 @@
-﻿using Shapes.Services;
+﻿using Shapes.Exceptions;
+using Shapes.Services;
 using Xunit;
 
 namespace Shapes.Test;
@@ -41,6 +42,6 @@ public class ShapeCircleTests
         Action action = () => _shapeService.CalculateCircleArea(radius);
 
         // Assert
-        Assert.Throws<Exception>(action);
+        Assert.Throws<ShapeException>(action);
     }
 }

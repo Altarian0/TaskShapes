@@ -1,4 +1,6 @@
-﻿using Shapes.Services;
+﻿using Shapes.Exceptions;
+using Shapes.Models;
+using Shapes.Services;
 using Xunit;
 
 namespace Shapes.Test;
@@ -41,7 +43,7 @@ public class ShapeTriangleTests
         Action action = () => _shapeService.CalculateTriangleArea(sideA, sideB, sideC);
 
         // Assert
-        Assert.Throws<Exception>(action);
+        Assert.Throws<ShapeException>(action);
     }
     
     [Theory]
